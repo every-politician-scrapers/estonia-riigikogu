@@ -2,7 +2,7 @@ name: Scrape latest data
 
 on:
   schedule:
-    - cron:  '32 * * * *'
+    - cron:  '* 2 * * *'
 
 jobs:
   scheduled:
