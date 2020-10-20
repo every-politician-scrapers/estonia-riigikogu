@@ -2,11 +2,7 @@
 # frozen_string_literal: true
 
 require 'csv'
-require 'pry'
 require 'scraped'
-
-require 'open-uri/cached'
-OpenURI::Cache.cache_path = '.cache'
 
 class Riigikogu
   # details for an individual member
