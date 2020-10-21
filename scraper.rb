@@ -41,4 +41,6 @@ data = Riigikogu::Members.new(response: Scraped::Request.new(url: url).response)
 
 header = data.first.keys.to_csv
 rows = data.map { |row| row.values.to_csv }
+abort 'No results' if rows.count.zero?
+
 puts header + rows.join
