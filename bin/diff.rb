@@ -5,8 +5,8 @@ require 'csv'
 require 'daff'
 require 'pry'
 
-wikidata = CSV.table('wikidata.csv')
-official = CSV.table('data.csv')
+wikidata = CSV.table('data/wikidata.csv')
+official = CSV.table('data/official.csv')
 
 columns = %i[id name]
 wikidata_tc = [columns, *wikidata.map { |r| r.values_at(*columns) }]
