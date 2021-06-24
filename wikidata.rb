@@ -44,6 +44,7 @@ memberships_query = <<SPARQL
     OPTIONAL { ?item rdfs:label ?etLabel FILTER(LANG(?etLabel) = "et") }
     BIND(COALESCE(?riigikoguName, ?etLabel) AS ?name)
   }
+  ORDER BY ?name
 SPARQL
 
 url = WIKIDATA_SPARQL_URL % CGI.escape(memberships_query)
