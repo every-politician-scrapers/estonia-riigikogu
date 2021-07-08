@@ -1,10 +1,9 @@
 #!/bin/env ruby
 # frozen_string_literal: true
 
-require 'csv'
-require 'scraped'
+require_relative '../../lib/scraper_data'
 
-class Riigikogu
+class Legislature
   # details for an individual member
   class Member < Scraped::HTML
     field :id do
@@ -36,11 +35,4 @@ class Riigikogu
   end
 end
 
-url = 'https://www.riigikogu.ee/riigikogu/koosseis/riigikogu-liikmed/'
-data = Riigikogu::Members.new(response: Scraped::Request.new(url: url).response).members
-
-header = data.first.keys.to_csv
-rows = data.map { |row| row.values.to_csv }
-abort 'No results' if rows.count.zero?
-
-puts header + rows.join
+puts ScraperData.new('https://www.riigikogu.ee/riigikogu/koosseis/riigikogu-liikmed/').csv
