@@ -6,11 +6,10 @@ ruby '~> 2.6.0'
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'daff'
+gem 'every-politician-scraper', github: 'tmtmtmtm/every-politician-scraper'
 gem 'open-uri-cached'
 gem 'pry'
 gem 'rake'
-gem 'scraped', github: 'everypolitician/scraped'
 
 group :test do
   gem 'reek', '~> 6.0'

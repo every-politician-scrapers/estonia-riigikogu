@@ -1,7 +1,7 @@
 #!/bin/env ruby
 # frozen_string_literal: true
 
-require_relative '../../lib/scraper_data'
+require 'every_politician_scraper/scraper_data'
 
 class Legislature
   # details for an individual member
@@ -35,4 +35,5 @@ class Legislature
   end
 end
 
-puts ScraperData.new('https://www.riigikogu.ee/riigikogu/koosseis/riigikogu-liikmed/').csv
+url = 'https://www.riigikogu.ee/riigikogu/koosseis/riigikogu-liikmed/'
+puts EveryPoliticianScraper::ScraperData.new(url).csv
